@@ -3,3 +3,9 @@ i3_progressive_mode    (Learn crafting recipes progressively)    bool false
 
 # Regroup the items of the same type in the item list.
 i3_item_compression    (Regroup items of the same type)    bool true
+
+# The height of the inventory
+i3_inv_height          (i3 inventory height)    int 4 1 4
+
+# The width of the inventory
+i3_inv_width           (i3 inventory width)    int 9 1 9

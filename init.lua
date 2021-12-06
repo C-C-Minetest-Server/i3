@@ -10,8 +10,8 @@ i3 = {
 	http = core.request_http_api(),
 
 	MAX_FAVS = 6,
-	INV_SIZE = 4*9,
-	HOTBAR_LEN = 9,
+	INV_SIZE = (minetest.settings:get("i3_inv_height") or 4)*(minetest.settings:get("i3_inv_width") or 9),
+	HOTBAR_LEN = (minetest.settings:get("i3_inv_width") or 9),
 	ITEM_BTN_SIZE = 1.1,
 	DROP_BAG_ON_DIE = true,
 	MIN_FORMSPEC_VERSION = 4,
