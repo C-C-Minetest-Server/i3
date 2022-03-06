@@ -12,7 +12,7 @@ local fmt, find, match, gmatch, sub, split, lower, upper =
 local old_is_creative_enabled = core.is_creative_enabled
 
 function core.is_creative_enabled(name)
-	if name == "" then
+	if name == "" or name == nil or (name.is_player and name:is_player()) then
 		return old_is_creative_enabled(name)
 	end
 
@@ -101,7 +101,7 @@ local function search(data)
 	for i = 1, #data.items_raw do
 		local item = data.items_raw[i]
 		local def = reg_items[item]
-		local desc = lower(translate(data.lang_code, def and def.description)) or ""
+		local desc = lower(translate(data.lang_code, def and def.description or item)) or ""
 		local search_in = fmt("%s %s", item, desc)
 		local temp, j, to_add = {}, 1
 
